@@ -1,4 +1,3 @@
-var userInput = " ";
 
 function Letter (letterValue) {
     this.letterValue = letterValue;
@@ -23,8 +22,7 @@ function Letter (letterValue) {
 var word = new Letter("k");
 
 word.letterCheck();
-console.log(word);
-console.log(userInput);
+
 
 
 // module.exports(Letter);
