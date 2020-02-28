@@ -2,27 +2,34 @@
 function Letter (letterValue) {
     this.letterValue = letterValue;
     this.guessed = false;
-    this.letterCheck = function() {
-        userInput = process.argv[2];
-        if (letterValue === userInput) {
+    this.letterCheck = function(userInput) {
+        if (this.letterValue === userInput) {
             this.guessed = true;
-        } else {
-            this.guessed = false;
+            return true;
+    } else {
+        return false;
     };
 }
     this.letterDisplay = function() {
-        if (letterValue === userInput) {
-            return " ";
+        if (this.guessed) {
+            return this.letterValue;
+    
         } else {
-            return "_";
+            return "_ "
         }
     }
 };
 
-var word = new Letter("k");
+// var word = new Letter("k");
 
-word.letterCheck();
+// console.log(word.letterDisplay());
 
+// console.log(word.letterCheck("J"));
 
+// console.log(word.letterDisplay());
 
-// module.exports(Letter);
+// console.log(word.letterCheck("k"));
+
+// console.log(word.letterDisplay());
+
+module.exports = Letter;
